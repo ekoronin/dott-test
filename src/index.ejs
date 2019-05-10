@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <title>Dott test</title>
+</head>
+
+<body>
+    <ek-dott-input id="test-dott-input" placeholder="Type words or click the mic and speak..."></ek-dott-input>
+    <ek-dott-carousel id="test-dott-carousel" items="3" stub-image="https://dummyimage.com/180x250/7f007f/eeeeee.png&text=no+cover"></ek-dott-carousel>
+
+    <script type="text/javascript">
+    const dottInput = document.querySelector("#test-dott-input");
+    const dottCarousel = document.querySelector("#test-dott-carousel")
+
+    dottInput.addEventListener('searcherror', (event) => {
+        console.error("Search error event with error: ", event.error);  
+    });
+    dottInput.addEventListener('searchdone', (event) => {
+        //once data is received from the ek-dott-input - feed the data to the carousel
+        dottCarousel.setFeed(event.data, true);
+    });
+    </script>
+</body>
+
+</html>

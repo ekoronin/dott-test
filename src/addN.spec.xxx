@@ -1,0 +1,15 @@
+import addN  from './addN';
+
+describe('addN function', () => {
+    const addEight:(y:number) => number = addN(8);
+
+    it ('tests adding 7', () => {
+        const fifteen: number = addEight(7);
+        expect(fifteen).toBe(15);
+    });
+
+    it ('tests adding 100', () => {
+        const hundred8: number = addEight(100);
+        expect(hundred8).toBe(108);
+    });
+});
